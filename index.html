@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tặng Phươngg 💖</title>
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -54,8 +56,15 @@
     }
 
     @keyframes flyUp {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-120px) scale(1.6); opacity: 0; }
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-120px) scale(1.6);
+        opacity: 0;
+      }
     }
 
     /* Tim nhỏ theo chuột */
@@ -68,7 +77,9 @@
       pointer-events: none;
       z-index: 10;
     }
-    .heart::before, .heart::after {
+
+    .heart::before,
+    .heart::after {
       content: '';
       position: absolute;
       width: 10px;
@@ -76,12 +87,27 @@
       background: inherit;
       border-radius: 50%;
     }
-    .heart::before { top: -5px; left: 0; }
-    .heart::after { top: 0; left: -5px; }
+
+    .heart::before {
+      top: -5px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -5px;
+    }
 
     @keyframes floatUp {
-      0% { opacity: 1; transform: translate(-50%, -50%) rotate(45deg) scale(1); }
-      100% { opacity: 0; transform: translate(-50%, -120%) rotate(45deg) scale(1.6); }
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -120%) rotate(45deg) scale(1.6);
+      }
     }
 
     @media (max-width: 600px) {
@@ -93,6 +119,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="box">
     <div class="center-text">
@@ -281,5 +308,18 @@
       setTimeout(() => heart.remove(), 1200);
     });
   </script>
+  <audio id="bg-music" loop>
+    <source src="./song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    window.addEventListener("click", () => {
+      const music = document.getElementById("bg-music");
+      music.play();
+    }, { once: true }); // chỉ cần click 1 lần
+  </script>
+
+
 </body>
+
 </html>
